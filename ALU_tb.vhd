@@ -48,7 +48,7 @@ begin
                 OPCODE => opcode_test,
                 A => a_test,
                 B => b_test,
-                ALU_out => alu_out_test
+                ALU_out => led
                 );
           d0: debouncer
              port map
@@ -85,7 +85,7 @@ if rising_edge(clk) then
     if (button_ad(3) = '1') then --reset statement
         A_test  <= (others => '0');
         B_test  <= (others => '0');
-        ALU_out_test <= (others => '0');
+        opcode_test <= (others => '0');
    
     else 
         if (button_ad(2) = '1') then
